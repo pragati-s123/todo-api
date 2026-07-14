@@ -65,3 +65,6 @@ async def delete_task(task_id: int):
             tasks.pop(i)
             return
     raise HTTPException(status_code=404, detail=f"Task {task_id} not found")
+@app.get("/tasks", summary="List all tasks")
+async def get_tasks():
+    return tasks
